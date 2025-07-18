@@ -4,8 +4,8 @@ let reservados = [];
 
 async function cargarTurnos() {
   try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbx-KAVSOkEnvGSeo03y_tLQO2d5f2o2My5evShk63-Kld7Ro68fUIdVLXHu-pZEVBXE/exec");
-    const data = await response.json();
+    const API_URL = 'https://script.google.com/macros/s/AKfycbwbB-n6Y5m5GUg8cSUd8PgZEWPLxefSkaMD1Eif9jbMqT1hvGvYuaeU4D0icRYwmijz/exec';
+    const response = await fetch(API_URL);
 
     if (!Array.isArray(data)) {
       throw new Error("La respuesta no es un array: " + JSON.stringify(data));
