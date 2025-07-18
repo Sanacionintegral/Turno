@@ -5,7 +5,13 @@ let reservados = [];
 async function cargarTurnos() {
   try {
     const response = await fetch("https://script.google.com/macros/s/AKfycbx-KAVSOkEnvGSeo03y_tLQO2d5f2o2My5evShk63-Kld7Ro68fUIdVLXHu-pZEVBXE/exec");
-    reservados = await response.json();  // debe ser un array como ["T1", "T3", ...]
+    const data = await response.json();
+
+    if (!Array.isArray(data)) {
+      throw new Error("La respuesta no es un array: " + JSON.stringify(data));
+    }
+
+    reservados = data;
 
     const fechas = generarFechas();
     let turnoNumero = 1;
@@ -21,6 +27,14 @@ async function cargarTurnos() {
         turnoNumero++;
       });
     });
+
+    mostrarTurnos();
+
+  } catch (error) {
+    alert("Error cargando turnos: " + error.message);
+  }
+}
+
 
     mostrarTurnos();
   } catch (error) {
