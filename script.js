@@ -1,4 +1,4 @@
-const API_URL = 'https://script.google.com/macros/s/AKfycbwbB-n6Y5m5GUg8cSUd8PgZEWPLxefSkaMD1Eif9jbMqT1hvGvYuaeU4D0icRYwmijz/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbzwGsyp0KvCttzmMyAsOt5Nsn-6eYtv7wc9nhueA92Hlkis-MNv7IGTwMtz-TofMfHl/exec';
 const whatsapp = '2235931151';
 
 let turnos = [];
